@@ -132,7 +132,7 @@ def last_modified(file):
   
     now = datetime.now()
     modtime = now - datetime.fromtimestamp(path.getmtime(file))
-    days = modtime.seconds / (60 * 60 * 24)
+    days = modtime.days + (modtime.seconds / (60 * 60 * 24))
   
     if days:
         if days == 1:
