@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # coding: utf-8
 
 """
@@ -13,7 +12,8 @@ Number Output Format Library.
 __all__ = ['zero_lead', 'hours_output',
            'zero_trail', 'time_output',
            'date_only', 'time_only',
-           'last_modified']
+           'last_modified', 'human_size',
+           'percentify']
 
 
 def zero_lead(num, shift=2):
@@ -158,7 +158,12 @@ def last_modified(file):
 
 
 def human_size(size):
-    
+
+    """
+    Returns human-readable filesize.
+    Accepts size in bytes.
+    """
+
     seq = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
     unit = seq[0]
     
@@ -167,4 +172,15 @@ def human_size(size):
         unit = seq[seq.index(unit) + 1]
     
     return '{} {}'.format(round(size, 2), unit)
+
+
+def percentify(dictionary):
+
+    result = dict()
+    total_count = sum(dictionary[k] for k in dictionary.keys())
+
+    for key in dictionary.keys():
+        result[key] = (100 * dictionary[key]) / float(total_count)
+
+    return result
 
