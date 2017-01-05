@@ -176,11 +176,21 @@ def human_size(size):
 
 def percentify(dictionary):
 
-    result = dict()
-    total_count = sum(dictionary[k] for k in dictionary.keys())
+    """
+    Requires an array with numerical values,
+    calculates their percentage against the total array value,
+    and returns the exact type array with values replaced.
+    Accepted argument types:
+        dict, list
+    """
 
-    for key in dictionary.keys():
-        result[key] = (100 * dictionary[key]) / float(total_count)
+    if isinstance(array, list):
+        total = sum(array)
+        return list(round((100 * float(n)) / total, precision) for n in array) 
 
-    return result
+    elif isinstance(array, dict):
+        total = sum(array[k] for k in array.keys())
+        return {k:round((100 * float(array[k])) / total, precision) for k in array.keys()}
 
+    else:
+        return None
