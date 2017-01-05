@@ -174,7 +174,7 @@ def human_size(size):
     return '{} {}'.format(round(size, 2), unit)
 
 
-def percentify(dictionary):
+def percentify(array, precision=2):
 
     """
     Requires an array with numerical values,
