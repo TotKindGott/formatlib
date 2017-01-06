@@ -3,5 +3,6 @@
 from .colors import *
 from .states import *
 from .numbers import *
+from .palinum import *
 from .callbacks import link_to_maps
 from .permissions import human_mode
