@@ -116,3 +116,4 @@ if __name__ == '__main__':
   highlight('highlight.highlight("ATTENTION!", "red", width=42, alignment="center")', 'orange', False)
   highlight("ATTENTION!", "red", False, width=42, alignment='center')
   print 'See console output above for accepted a.k.a web-safe color attributes with their W3C names & respective RGB values'
+  

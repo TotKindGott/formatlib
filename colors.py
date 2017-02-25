@@ -346,3 +346,4 @@ def convert_color(color, format):
         else:
             return color
 
+

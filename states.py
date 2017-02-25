@@ -75,7 +75,7 @@ def state_expand(state):
 def state_shorten(state):
   
     try:
-        abbreviation = (abbreviation for abbreviation, expansion in us_states.items() if expansion == state.title()).next()
+        abbreviation = (abbreviation for abbreviation, expansion in us_states.items() if expansion == state).next()
         return abbreviation
     except:
         if state in us_states.keys():

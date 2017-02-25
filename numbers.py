@@ -13,7 +13,7 @@ __all__ = ['zero_lead', 'hours_output',
            'zero_trail', 'time_output',
            'date_only', 'time_only',
            'last_modified', 'human_size',
-           'percentify']
+           'percentify', 'gradual_averages']
 
 
 def zero_lead(num, shift=2):
@@ -194,3 +194,22 @@ def percentify(array, precision=2):
 
     else:
         return None
+
+
+def gradual_averages(num_list):
+
+    averages = list()
+    average = 0
+    count = 0
+
+    for num in num_list:
+        average += num
+        count += 1
+        averages.append(average / count)
+
+    return averages
+
+
+def dollar(num):
+    return '$' + str(num)
+
